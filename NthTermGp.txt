@@ -1,0 +1,14 @@
+// Nth term Gp
+
+public static int nthTermGp(int a, int r, int n) {
+		if(n == 1) {
+			return 1;
+		}
+		
+		return a * (int)Math.pow(r, n-1);
+	}
+
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(nthTermGp(2,2,4));
+	}
