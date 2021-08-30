@@ -1,0 +1,43 @@
+public static void quickSort(int[] a, int l, int r) {
+		if(l < r) {
+			int p = pivot(a,l,r);
+			quickSort(a,l,p-1);
+			quickSort(a,p+1,r);
+		}
+	}
+	
+public static int pivot(int[] a, int l, int r) {
+		int i = l-1;
+		int j = l;
+		int pivot = r;
+		
+		while(j < r) {
+			if(a[pivot] > a[j]) {
+				i++;
+				swap(a,i,j);
+			}
+			j++;
+		}
+		swap(a,i+1,r);
+		return i+1;
+	}
+
+public static void swap(int[] a, int i, int j) {
+		int temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;
+	}
+	
+public static void printArray(int[] a){
+		for(int ar: a) {
+			System.out.print(ar + " ");
+		}
+	}
+
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] ar = {10,80,30,90,40,50,70};
+		
+		quickSort(ar, 0, ar.length-1);
+		printArray(ar);
+	}
