@@ -1,0 +1,28 @@
+public static int stringToInt(String s)
+{
+		if(s.length() <= 0) 
+	{
+		System.out.println("type string value to convert in integer");
+		return 0;
+	}
+		
+	if(s.length() == 1) 
+	{
+			return s.charAt(0) - '0';
+	}
+		
+		
+	double y = stringToInt(s.substring(1));
+		
+	double x = s.charAt(0) - '0';
+		
+	x = x * Math.pow(10, s.length()-1) + y;
+		
+	return (int)x;		
+}
+
+public static void main(String[] args) 
+{
+        String s = "1234";
+	System.out.println(stringToInt(s));
+}
